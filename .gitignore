@@ -1,2 +1,8 @@
 
+# TUM password
 secrets.txt
+
+# Caches and logs
+geckodriver.log
+__pycache__
+
