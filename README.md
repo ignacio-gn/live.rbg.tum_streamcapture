@@ -16,8 +16,8 @@ TODO
 
 ## Setup 
 Make sure to set the following important environment variables:
-- GECKODRIVER_PATH: "/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver" 
-
+- GECKODRIVER_PATH: Default is "/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver" 
+- COURSE_MAP:
 
 ## Usage
 TODO

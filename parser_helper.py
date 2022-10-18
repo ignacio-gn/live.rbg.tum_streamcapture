@@ -1,6 +1,6 @@
 from selenium.webdriver.firefox import webdriver
 from selenium.webdriver.common.by import By
-
+import json
 
 def login(browser: webdriver):
     login_button = browser.find_element(By.CSS_SELECTOR, "a.inline-block:nth-child(2)")
@@ -13,15 +13,15 @@ def login(browser: webdriver):
 
 
 def enter_credentials(browser: webdriver):
-    CREDENTIALS = {
-        "username": "ge95rof",
-        "password": open("secrets.txt", "r").read()
-    }
+    credentials: dict[str, str]
+    with open("secrets.json") as data:
+        credentials = json.load(data)
+
     username_input = browser.find_element(By.CSS_SELECTOR, "#username")
     password_input = browser.find_element(By.CSS_SELECTOR, "#password")
 
-    username_input.send_keys(CREDENTIALS["username"])
-    password_input.send_keys(CREDENTIALS["password"])
+    username_input.send_keys(credentials["username"])
+    password_input.send_keys(credentials["password"])
 
     browser.find_element(By.CSS_SELECTOR, "#btnLogin").click()
 

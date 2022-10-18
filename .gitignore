@@ -1,6 +1,6 @@
 
 # TUM password
-secrets.txt
+secrets.json
 
 # Caches and logs
 geckodriver.log
