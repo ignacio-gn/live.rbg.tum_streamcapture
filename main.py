@@ -6,10 +6,11 @@ import parser_helper
 COURSE_MAP = {
     "IN0042": "course379"
 }
+GECKODRIVER_PATH = "/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver"
 
 if __name__ == '__main__':
     # SETUP ============================================================================================================
-    browser = webdriver.WebDriver(executable_path="/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver")
+    browser = webdriver.WebDriver(executable_path=GECKODRIVER_PATH)
     browser.get("https://live.rbg.tum.de")
 
     parser_helper.login(browser)
