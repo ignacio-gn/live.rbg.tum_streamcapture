@@ -10,7 +10,7 @@ from selenium.webdriver.firefox.options import Options
 import helpers
 import parser_helper
 
-RECORDING_TIMEOUT_MINS = 1
+RECORDING_TIMEOUT_MINS = 45
 SLEEP_SECONDS = 5
 VERSION = 2.0
 HELP_MSG = """Usage: python3 main.py [OPTIONS]...
@@ -18,7 +18,8 @@ options:
 -h      --help          Print this message and exit
 -v      --version       Print version and exit
 -i      --input         Enter a course from the course list through stdin
--c=COURSE_ID            Enter a course given a custom id
+-c=COURSE_CLASSNAME     Enter a course given its html class name as found on https://live.rbg.tum.de
+-m=MODULE_CODE          Enter a course given its TUM module code as found on COURSE_MAP
 -t=MINUTES              Set minutes after which the recording will be stopped.
                         Default: 90
 """
@@ -55,6 +56,9 @@ if __name__ == '__main__':
                 continue
             case ["-t", minutes]:
                 timeout_minutes = minutes
+                continue
+            case ["-m", module_id]:
+                course_id = COURSE_MAP[module_id]
                 continue
             case _:
                 print(HELP_MSG)
