@@ -10,6 +10,7 @@ from selenium.webdriver.firefox.options import Options
 import helpers
 import parser_helper
 
+RECORDING_TIMEOUT_MINS = 1
 SLEEP_SECONDS = 5
 VERSION = 2.0
 HELP_MSG = """Usage: python3 main.py [OPTIONS]...
@@ -25,13 +26,14 @@ COURSE_MAP = {
     "IN0042": "course379",  # IT Sicherheit
     "IN2381": "course391",  # Einführung in Quantum Computing
     "IN0008": "course392",  # Grundlagen Datenbanken
+    "IN0009": "course387",  # Grundlagen: Betriebssysteme
 }
 GECKODRIVER_PATH = "/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver"
 
 if __name__ == '__main__':
     # COMMAND FLAGS READING ============================================================================================
     course_id: str = str()
-    timeout_minutes: int = 90
+    timeout_minutes: int = RECORDING_TIMEOUT_MINS
 
     if len(sys.argv) > 3:
         print(HELP_MSG)
@@ -84,6 +86,9 @@ if __name__ == '__main__':
         print(f"Terminated with exception {exc}")
 
     time.sleep(SLEEP_SECONDS)
+
+    if not os.path.isdir("./output"):
+        os.mkdir("./output")
     subprocess.run(
         ["mv", "./playlist-playlist.mp4.part", helpers.get_filename()]
     )
