@@ -6,3 +6,5 @@ secrets.json
 geckodriver.log
 __pycache__
 
+# Other files
+.idea
