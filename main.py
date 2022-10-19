@@ -10,6 +10,7 @@ from selenium.webdriver.firefox.options import Options
 import helpers
 import parser_helper
 
+HEADLESS_BROWSING = True
 RECORDING_TIMEOUT_MINS = 45
 SLEEP_SECONDS = 5
 VERSION = 2.0
@@ -69,7 +70,7 @@ if __name__ == '__main__':
 
     # SETUP ============================================================================================================
     options = Options()
-    options.headless = True
+    options.headless = HEADLESS_BROWSING
     browser = webdriver.WebDriver(options=options, executable_path=GECKODRIVER_PATH)
     browser.get("https://live.rbg.tum.de")
 
