@@ -1,3 +1,4 @@
+from datetime import datetime
 
 
 def get_course_class_id(course_map: dict[str, str]) -> str:
@@ -7,3 +8,8 @@ def get_course_class_id(course_map: dict[str, str]) -> str:
         print(f"Invalid option: {inp}")
 
     return course_map[inp]
+
+
+def get_filename() -> str:
+    now = datetime.now()
+    return f"./output/{now.year}.{now.month}.{now.day}-{now.hour}.{now.minute}_aufzeichnung.mp4"
