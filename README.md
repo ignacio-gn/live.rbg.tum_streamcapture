@@ -1,8 +1,8 @@
 # live.rbg.tum streamcapture
-Capture livestreams from TUM and store them locally
+*Capture livestreams from TUM and store them locally*
 
 ## Dependencies
-This tool uses bash and Python 3.10 or later.
+This tool uses bash and Python v3.10 or later.
 ### Python dependencies
 - Selenium 4.3.0
 - youtube-dl 2021.12.17
@@ -17,10 +17,11 @@ After installing all necessary dependencies, write a JSON file at ./secrets.json
 - password: [tum password]
 
 Example file: 
-{
-    "username": "tu00usr",
-    "password": "mypassword"
-}
+    
+    {
+        "username": "tu00usr",
+        "password": "mypassword"
+    }
 
 ## Setup 
 Make sure to set the following important environment variables:
