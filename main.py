@@ -13,7 +13,7 @@ import parser_helper
 HEADLESS_BROWSING = True
 RECORDING_TIMEOUT_MINS = 45
 SLEEP_SECONDS = 5
-VERSION = 2.0
+VERSION = 2.1
 HELP_MSG = """Usage: python3 main.py [OPTIONS]...
 options:
 -h      --help          Print this message and exit
@@ -29,6 +29,7 @@ COURSE_MAP = {
     "IN2381": "course391",  # Einführung in Quantum Computing
     "IN0008": "course392",  # Grundlagen Datenbanken
     "IN0009": "course387",  # Grundlagen: Betriebssysteme
+    "MA0902": "course448",  # Analysis
 }
 GECKODRIVER_PATH = "/Library/Frameworks/Python.framework/Versions/3.10/bin/geckodriver"
 
